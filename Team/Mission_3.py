@@ -9,8 +9,8 @@ from pybricks.tools import wait, StopWatch
 
 # CONSTANTS
 # =========
-STRAIGHT_SPEED = 100
-STRAIGHT_ACC = 100
+STRAIGHT_SPEED = 900
+STRAIGHT_ACC = 300
 TURN_RATE = 80
 TURN_ACC = 85
 
