@@ -7,6 +7,14 @@ from pybricks.robotics import DriveBase
 from pybricks.tools import wait, StopWatch
 
 
+# CONSTANTS
+# =========
+STRAIGHT_SPEED = 100
+STRAIGHT_ACC = 100
+TURN_RATE = 80
+TURN_ACC = 85
+
+
 # VARIABLE (HUB)
 # ==============
 hub = InventorHub()
@@ -48,13 +56,16 @@ def follow_the_line():
 
 
 def solve_mission_3():
-    drivebase.settings(straight_speed=100, straight_acceleration=100, turn_rate=80, turn_acceleration=85)
+    drivebase.settings(straight_speed=STRAIGHT_SPEED,
+                       straight_acceleration=STRAIGHT_ACC,
+                       turn_rate=TURN_RATE, 
+                       turn_acceleration=TURN_ACC)
     # Drive from the home area to mission 2
-    drivebase.straight(distance=610, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=605, then=Stop.HOLD, wait=True)
     # Turn to the right to the mission
     drivebase.turn(angle=90, then=Stop.HOLD, wait=True)
     # Drive in front of Mission 3
-    drivebase.straight(distance=560, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=556, then=Stop.HOLD, wait=True)
     # Turn left to face Mission 3
     drivebase.turn(angle=-90, then=Stop.HOLD, wait=True)
     # Wait for half a second to stabilize
@@ -76,10 +87,10 @@ def solve_mission_3():
 
 def return_to_base():
     drivebase.straight(distance=-110, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=30, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=-490, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=20, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=-480, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=-120, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=660, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=500, then=Stop.HOLD, wait=True)
 
 
 # MAIN PROGRAM
