@@ -45,3 +45,12 @@ def Mission():
     drivebase.turn(angle=-40, then=Stop.HOLD, wait=True)
     wait(500)
     drivebase.turn(angle=40, then=Stop.HOLD, wait=True)
+    
+def return_to_base():
+    drivebase.straight(distance=-590, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=-90, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=680, then=Stop.HOLD, wait=True)
+
+
+Mission()
+return_to_base()
