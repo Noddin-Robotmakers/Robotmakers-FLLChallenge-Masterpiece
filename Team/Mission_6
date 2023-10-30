@@ -1,0 +1,47 @@
+from pybricks.hubs import InventorHub
+from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
+from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.robotics import DriveBase
+from pybricks.tools import wait, StopWatch
+
+hub = InventorHub()
+
+
+
+STRAIGHT_SPEED = 900
+STRAIGHT_ACC = 300
+TURN_RATE = 80
+TURN_ACC = 85
+
+
+
+# VARIABLES (DRIVING MOTORS + DRIVEBASE)
+# ==============================
+left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
+right_motor = Motor(port=Port.C)
+drivebase = DriveBase(left_motor, right_motor, 56, 110)
+
+# VARIABLES (ATTACHMENT MOTORS)
+# =============================
+left_attachent_motor = Motor(port=Port.B)
+right_attachent_motor = Motor(port=Port.A)
+
+# VARIABLES (SENSORS)
+# ===================
+right_color_sensor = ColorSensor(Port.E)
+left_color_sensor = ColorSensor(Port.F)
+
+
+drivebase.settings(straight_speed=STRAIGHT_SPEED,
+                       straight_acceleration=STRAIGHT_ACC,
+                       turn_rate=TURN_RATE, 
+                       turn_acceleration=TURN_ACC)
+
+drivebase.straight(750)
+drivebase.turn(50)
+drivebase.straight(200)
+drivebase.turn(45)
+drivebase.straight(-100)
+drivebase.straight(-400)
+drivebase.turn(50)
+drivebase.straight(300)
