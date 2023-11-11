@@ -41,6 +41,7 @@ left_color_sensor = ColorSensor(Port.F)
 # Solve mission 3
 # ---------------
 def solve_mission_3():
+    # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
                        turn_rate=TURN_RATE,
