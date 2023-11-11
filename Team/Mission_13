@@ -1,16 +1,22 @@
+# IMPORTS
+# =======
 from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor
 from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 
-hub = InventorHub()
 
-
+# CONSTANTS
+# =========
 STRAIGHT_SPEED = 900
 STRAIGHT_ACC = 300
 TURN_RATE = 80
 TURN_ACC = 85
 
+
+# VARIABLE (HUB)
+# ==============
+hub = InventorHub()
 
 # VARIABLES (DRIVING MOTORS + DRIVEBASE)
 # ==============================
