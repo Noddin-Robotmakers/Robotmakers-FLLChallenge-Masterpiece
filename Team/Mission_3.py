@@ -62,6 +62,8 @@ def solve_mission_3():
 
 # Return back to base
 # -------------------
+
+
 def return_to_base():
     # Drive backward
     drivebase.straight(distance=-600, then=Stop.HOLD, wait=True)
