@@ -1,42 +1,61 @@
+# IMPORTS
+# =======
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.pupdevices import Motor, ColorSensor
+from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch
 
+
+# CONSTANTS
+# =========
+STRAIGHT_SPEED = 900
+STRAIGHT_ACC = 300
+TURN_RATE = 70
+TURN_ACC = 70
+
+
+# VARIABLE (HUB)
+# ==============
 hub = InventorHub()
 
-hub = InventorHub()
+# VARIABLES (DRIVING MOTORS + DRIVEBASE)
+# ======================================
 left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(port=Port.C)
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
-right_color_sensor = ColorSensor(Port.E)
-left_color_sensor = ColorSensor(Port.F)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
+# VARIABLES (ATTACHMENT MOTORS)
+# =============================
+left_attachent_motor = Motor(port=Port.B)
+right_attachent_motor = Motor(port=Port.A)
 
-def line_track():
-    if (left_color_sensor.color() == Color.NONE) or (right_color_sensor.color() == Color.NONE):
-        # checks if the color detected is black and moves forward if it is
-        left_motor.run_angle(speed=-700, rotation_angle=30, then=Stop.HOLD, wait=False)
-        right_motor.run_angle(speed=-700, rotation_angle=30, then=Stop.HOLD, wait=False)
-    else:
-        while (left_color_sensor.color() != Color.NONE) or (right_color_sensor.color() != Color.NONE):
-            # if there is no black then go left and then if still no black then it movex right
-            left_motor.run_angle(speed=-700, rotation_angle=10, then=Stop.HOLD, wait=False)
-            if (left_color_sensor.color() != Color.NONE) or (right_color_sensor.color() != Color.NONE):
-                while (left_color_sensor.color() != Color.NONE) or (right_color_sensor.color() != Color.NONE):
-                    right_motor.run_angle(speed=-700, rotation_angle=10, then=Stop.HOLD, wait=False)
-                    if (left_color_sensor.color() == Color.NONE) or (right_color_sensor.color() == Color.NONE):
-                        left_motor.run_angle(speed=-700, rotation_angle=30, then=Stop.HOLD, wait=False)
-                        right_motor.run_angle(speed=-700, rotation_angle=30, then=Stop.HOLD, wait=False)
+# VARIABLES (SENSORS)
+# ===================
+right_color_sensor = ColorSensor(Port.E)
+left_color_sensor = ColorSensor(Port.F)
 
+
+# FUNCTIONS
+# =========
+
+
+# Solve mission 1
+# ----------------
 def push():
-    drivebase.settings(straight_speed=100, straight_acceleration=200, turn_rate=300, turn_acceleration=1000)
+    # Settings for drivebase
+    drivebase.settings(straight_speed=500, straight_acceleration=200,
+                       turn_rate=300, turn_acceleration=1000)
+    # Drive forward
     drivebase.straight(distance=100, then=Stop.HOLD, wait=True)
+    # Turn
     drivebase.turn(angle=80, then=Stop.HOLD, wait=True)
+    # Turn back
     drivebase.turn(angle=-80, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=-100, then=Stop.HOLD, wait=True)
+    # Return to base
+    drivebase.straight(distance=-300, then=Stop.HOLD, wait=True)
 
-push()  
+# MAIN PROGRAM
+# ============
+
+
+push()
