@@ -19,7 +19,7 @@ TURN_ACC = 70
 hub = InventorHub()
 
 # VARIABLES (DRIVING MOTORS + DRIVEBASE)
-# ==============================
+# ======================================
 left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
@@ -40,7 +40,6 @@ left_color_sensor = ColorSensor(Port.F)
 
 # Solve mission 3
 # ---------------
-
 def solve_mission_3():
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
@@ -63,8 +62,6 @@ def solve_mission_3():
 
 # Return back to base
 # -------------------
-
-
 def return_to_base():
     # Drive backward
     drivebase.straight(distance=-600, then=Stop.HOLD, wait=True)
