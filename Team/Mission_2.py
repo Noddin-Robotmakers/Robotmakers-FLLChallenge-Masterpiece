@@ -34,14 +34,14 @@ right_attachent_motor = Motor(port=Port.A)
 right_color_sensor = ColorSensor(Port.E)
 left_color_sensor = ColorSensor(Port.F)
 
+
 # FUNCTIONS
 # =========
 
+
 # Solve mission two
 # -----------------
-
-
-def mission_two():
+def solve_mission_two_and_return_to_base():
     # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
@@ -59,4 +59,4 @@ def mission_two():
 
 # MAIN PROGRAM
 # ============
-mission_two()
+solve_mission_two_and_return_to_base()
