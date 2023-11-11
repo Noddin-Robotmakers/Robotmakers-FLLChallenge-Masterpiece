@@ -19,7 +19,7 @@ TURN_ACC = 85
 hub = InventorHub()
 
 # VARIABLES (DRIVING MOTORS + DRIVEBASE)
-# ==============================
+# ======================================
 left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
