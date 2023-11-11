@@ -10,8 +10,8 @@ from pybricks.robotics import DriveBase
 # =========
 STRAIGHT_SPEED = 900
 STRAIGHT_ACC = 300
-TURN_RATE = 70
-TURN_ACC = 70
+TURN_RATE = 300
+TURN_ACC = 1000
 
 
 # VARIABLE (HUB)
@@ -40,11 +40,13 @@ left_color_sensor = ColorSensor(Port.F)
 
 
 # Solve mission 1
-# ----------------
+# ---------------
 def push():
     # Settings for drivebase
-    drivebase.settings(straight_speed=500, straight_acceleration=200,
-                       turn_rate=300, turn_acceleration=1000)
+    drivebase.settings(straight_speed=STRAIGHT_SPEED,
+                       straight_acceleration=STRAIGHT_ACC,
+                       turn_rate=TURN_RATE,
+                       turn_acceleration=TURN_ACC)
     # Drive forward
     drivebase.straight(distance=100, then=Stop.HOLD, wait=True)
     # Turn
@@ -54,8 +56,7 @@ def push():
     # Return to base
     drivebase.straight(distance=-300, then=Stop.HOLD, wait=True)
 
+
 # MAIN PROGRAM
 # ============
-
-
 push()
