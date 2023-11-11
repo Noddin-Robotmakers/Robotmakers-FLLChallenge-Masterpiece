@@ -41,7 +41,7 @@ left_color_sensor = ColorSensor(Port.F)
 
 # Solve mission 1
 # ---------------
-def push():
+def solve_and_return_to_base():
     # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
@@ -59,4 +59,4 @@ def push():
 
 # MAIN PROGRAM
 # ============
-push()
+solve_and_return_to_base()
