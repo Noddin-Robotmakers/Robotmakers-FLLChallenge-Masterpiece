@@ -68,7 +68,6 @@ def solve_mission_6():
 
 # Return to base after completing the mission
 # -------------------------------------------
-
 def return_to_base():
     # Turn
     drivebase.turn(-90)
