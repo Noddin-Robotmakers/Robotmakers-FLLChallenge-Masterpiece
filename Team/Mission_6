@@ -5,8 +5,6 @@ from pybricks.pupdevices import Motor, ColorSensor
 from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 
-hub = InventorHub()
-
 
 # CONSTANTS
 # =========
@@ -16,8 +14,12 @@ TURN_RATE = 80
 TURN_ACC = 85
 
 
+# VARIABLE (HUB)
+# ==============
+hub = InventorHub()
+
 # VARIABLES (DRIVING MOTORS + DRIVEBASE)
-# ==============================
+# ======================================
 left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
