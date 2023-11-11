@@ -8,10 +8,10 @@ from pybricks.robotics import DriveBase
 
 # CONSTANTS
 # =========
-STRAIGHT_SPEED = 900
-STRAIGHT_ACC = 300
-TURN_RATE = 70
-TURN_ACC = 70
+STRAIGHT_SPEED = 100
+STRAIGHT_ACC = 100
+TURN_RATE = 100
+TURN_ACC = 80
 
 
 # VARIABLE (HUB)
