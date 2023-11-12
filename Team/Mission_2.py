@@ -49,6 +49,11 @@ def solve_mission_two_and_return_to_base():
                        turn_acceleration=TURN_ACC)
     # Drive forward
     drivebase.straight(distance=600, then=Stop.HOLD, wait=True)
+    # Change speed
+    drivebase.settings(straight_speed=900,
+                       straight_acceleration=300,
+                       turn_rate=80,
+                       turn_acceleration=85)
     # Drive backward
     drivebase.straight(distance=-200, then=Stop.HOLD, wait=True)
     # Turn
