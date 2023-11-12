@@ -53,7 +53,7 @@ def solve_mission_6():
     # Drive into mission
     drivebase.straight(210)
     # Do the speakers
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=-300,
+    left_attachent_motor.run_angle(speed=1000, rotation_angle=-270,
                                    then=Stop.COAST, wait=True)
     # Turn
     drivebase.turn(-45)
