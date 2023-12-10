@@ -1,10 +1,9 @@
 # IMPORTS
 # =======
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.pupdevices import Motor, ColorSensor
+from pybricks.parameters import Direction, Port,  Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch
 
 
 # VARIABLE (HUB)
@@ -31,9 +30,11 @@ left_color_sensor = ColorSensor(Port.F)
 # FUNCTIONS
 # =========
 def solve_mission_10():
-    drivebase.settings(straight_speed=130, straight_acceleration=900, turn_rate=80, turn_acceleration=85)
-    right_attachent_motor.run_angle(speed=100, rotation_angle=180, then=Stop.HOLD, wait=True)
+    drivebase.settings(straight_speed=130, straight_acceleration=900,
+                       turn_rate=80, turn_acceleration=85)
+    right_attachent_motor.run_angle(speed=100, rotation_angle=180,
+                                    then=Stop.HOLD, wait=True)
     drivebase.turn(30)
 
-solve_mission_10()
 
+solve_mission_10()
