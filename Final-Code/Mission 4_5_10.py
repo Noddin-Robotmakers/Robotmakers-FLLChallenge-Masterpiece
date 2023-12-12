@@ -28,7 +28,7 @@ drivebase = DriveBase(left_motor, right_motor, 56, 110)
 # VARIABLES (ATTACHMENT MOTORS)
 # =============================
 left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+right_attachment_motor = Motor(port=Port.A)
 
 # VARIABLES (SENSORS)
 # ===================
@@ -57,8 +57,8 @@ def solve_mission_4():
     drivebase.straight(distance=250, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=-60, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=70, then=Stop.HOLD, wait=True)
-    right_attachent_motor.run_angle(speed=500, rotation_angle=100,
-                                    then=Stop.HOLD, wait=True)
+    right_attachment_motor.run_angle(speed=500, rotation_angle=100,
+                                     then=Stop.HOLD, wait=True)
     drivebase.straight(distance=-100, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=50, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=195, then=Stop.HOLD, wait=True)

@@ -2,7 +2,7 @@
 # =======
 from pybricks.hubs import InventorHub
 from pybricks.pupdevices import Motor, ColorSensor
-from pybricks.parameters import Direction, Port,  Stop
+from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 
 
@@ -26,8 +26,8 @@ drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # VARIABLES (ATTACHMENT MOTORS)
 # =============================
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 # VARIABLES (SENSORS)
 # ===================
