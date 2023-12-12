@@ -1,10 +1,10 @@
 # IMPORTS
 # =======
 from pybricks.hubs import InventorHub
-from pybricks.pupdevices import Motor, ColorSensor, UltrasonicSensor
-from pybricks.parameters import Button, Color, Direction, Port, Side, Stop
+from pybricks.pupdevices import Motor, ColorSensor
+from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
-from pybricks.tools import wait, StopWatch
+from pybricks.tools import wait
 
 
 # CONSTANTS
@@ -28,7 +28,7 @@ drivebase = DriveBase(left_motor, right_motor, 56, 110)
 # VARIABLES (ATTACHMENT MOTORS)
 # =============================
 left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+right_attachment_motor = Motor(port=Port.A)
 
 # VARIABLES (SENSORS)
 # ===================
@@ -43,7 +43,7 @@ left_color_sensor = ColorSensor(Port.F)
 def solve_mission_4():
     drivebase.settings(straight_speed=900,
                        straight_acceleration=300,
-                       turn_rate=100, 
+                       turn_rate=100,
                        turn_acceleration=85)
     drivebase.straight(distance=-60, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=40, then=Stop.HOLD, wait=True)
@@ -57,7 +57,8 @@ def solve_mission_4():
     drivebase.straight(distance=250, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=-60, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=70, then=Stop.HOLD, wait=True)
-    right_attachent_motor.run_angle(speed=500, rotation_angle=100, then=Stop.HOLD, wait=True)
+    right_attachment_motor.run_angle(speed=500, rotation_angle=100,
+                                     then=Stop.HOLD, wait=True)
     drivebase.straight(distance=-100, then=Stop.HOLD, wait=True)
     drivebase.turn(angle=50, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=195, then=Stop.HOLD, wait=True)
@@ -69,8 +70,6 @@ def solve_mission_4():
     drivebase.stop()
 
 
-
-    
 # MAIN PROGRAM
 # ============
 solve_mission_4()
