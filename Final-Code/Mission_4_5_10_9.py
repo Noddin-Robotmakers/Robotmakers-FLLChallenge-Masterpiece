@@ -44,30 +44,38 @@ def solve_mission_4():
                        straight_acceleration=300,
                        turn_rate=100,
                        turn_acceleration=85)
-    left_attachment_motor.run_angle(speed=500, rotation_angle=180,
-                                    then=Stop.HOLD, wait=True)
+    # Forward
     drivebase.straight(distance=-60, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=43, then=Stop.HOLD, wait=True)
+    # Turn to face M10
+    drivebase.turn(angle=44, then=Stop.HOLD, wait=True)
+    # Ram into M10
     drivebase.straight(distance=-400, then=Stop.HOLD, wait=True)
+    # Back up
     drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=50, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=-350, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=-90, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=-300, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=-120, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=250, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=-60, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=70, then=Stop.HOLD, wait=True)
+    # Turn
+    drivebase.turn(angle=-140, then=Stop.HOLD, wait=True)
+    # Drive past M10
+    drivebase.straight(distance=230, then=Stop.HOLD, wait=True)
+    # Turn to face museum
+    drivebase.turn(angle=-45, then=Stop.HOLD, wait=True)
+    # Drive to museum
+    drivebase.straight(distance=600, then=Stop.HOLD, wait=True)
+    # Release flap
     right_attachment_motor.run_angle(speed=500, rotation_angle=100,
                                      then=Stop.HOLD, wait=True)
-    left_attachment_motor.run_angle(speed=500, rotation_angle=-100,
-                                    then=Stop.HOLD, wait=False)
-    drivebase.straight(distance=-100, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=50, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=195, then=Stop.HOLD, wait=True)
-    drivebase.turn(angle=40, then=Stop.HOLD, wait=True)
-    drivebase.straight(distance=80, then=Stop.HOLD, wait=True)
-    drivebase.drive(speed=400, turn_rate=15)
+    drivebase.turn(-30)
+    # Back up
+    drivebase.straight(distance=-150, then=Stop.HOLD, wait=True)
+    # Turn to face M5
+    drivebase.turn(angle=43, then=Stop.HOLD, wait=True)
+    # Drive past museum, and near M5
+    drivebase.straight(distance=229, then=Stop.HOLD, wait=True)
+    # Half finish M5
+    drivebase.turn(angle=42, then=Stop.HOLD, wait=True)
+    # Finish M5
+    drivebase.straight(distance=95, then=Stop.HOLD, wait=True)
+    # Home base
+    drivebase.drive(speed=400, turn_rate=13)
     wait(4000)
     drivebase.stop()
 
