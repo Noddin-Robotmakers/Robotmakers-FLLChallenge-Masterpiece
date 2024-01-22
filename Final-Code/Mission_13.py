@@ -47,16 +47,26 @@ def solve_mission_13_and_return_to_base():
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
     # Drive forward
-    drivebase.straight(distance=245, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=240, then=Stop.HOLD, wait=True)
     # Turn to face the mission
-    drivebase.turn(angle=-44, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=-47, then=Stop.HOLD, wait=True)
     # Drive into the mission
-    drivebase.straight(distance=400, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
     # Hook on to the craft creator lid
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=180,
-                                    then=Stop.COAST, wait=False)
+    right_attachent_motor.run_angle(speed=1000, rotation_angle=-150,
+                                    then=Stop.COAST, wait=True)
+    # Turn to face the mission
+    drivebase.turn(angle=5, then=Stop.HOLD, wait=True)
+    # Drive into the mission
+    drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
+    
     # Drive back
     drivebase.straight(distance=8, then=Stop.HOLD, wait=False)
+
+    # Hook on to the craft creator lid
+    right_attachent_motor.run_angle(speed=1000, rotation_angle=150,
+                                    then=Stop.COAST, wait=False)
+
     # Hook on the lever for mission 12
     left_attachent_motor.run_angle(speed=1000, rotation_angle=720,
                                    then=Stop.COAST, wait=True)
@@ -65,9 +75,9 @@ def solve_mission_13_and_return_to_base():
     # Turn
     drivebase.turn(angle=-55, then=Stop.HOLD, wait=True)
     # Go forward
-    drivebase.straight(distance=330, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=300, then=Stop.HOLD, wait=True)
     # Hook on the lever for mission 8
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=195,
+    left_attachent_motor.run_angle(speed=1000, rotation_angle=155,
                                    then=Stop.HOLD, wait=True)
     # Turn
     drivebase.turn(angle=10, then=Stop.HOLD, wait=True)
