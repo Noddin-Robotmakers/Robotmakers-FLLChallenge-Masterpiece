@@ -77,7 +77,7 @@ def solve_mission_13_and_return_to_base():
     # Go forward
     drivebase.straight(distance=300, then=Stop.HOLD, wait=True)
     # Hook on the lever for mission 8
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=155,
+    left_attachent_motor.run_angle(speed=1000, rotation_angle=170,
                                    then=Stop.HOLD, wait=True)
     # Turn
     drivebase.turn(angle=10, then=Stop.HOLD, wait=True)
