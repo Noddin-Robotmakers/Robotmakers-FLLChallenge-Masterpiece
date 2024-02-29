@@ -30,12 +30,6 @@ drivebase = DriveBase(left_motor, right_motor, 56, 110)
 left_attachent_motor = Motor(port=Port.B)
 right_attachent_motor = Motor(port=Port.A)
 
-# VARIABLES (SENSORS)
-# ===================
-right_color_sensor = ColorSensor(Port.E)
-left_color_sensor = ColorSensor(Port.F)
-
-
 # FUNCTIONS
 # =========
 
@@ -45,28 +39,26 @@ def solve_mission_3():
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
                        turn_rate=TURN_RATE,
-                       turn_acceleration=TURN_ACC)
+                       turn_acceleration=TURN_ACC)                
     # Drive from the home area to mission 2
-    drivebase.straight(distance=640, then=Stop.HOLD, wait=True)
-    # Turn
-    drivebase.turn(angle=-10, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=620, then=Stop.HOLD, wait=True)
+    drivebase.turn(-3)
     # Drive forward
     drivebase.straight(distance=215, then=Stop.HOLD, wait=True)
     # Drive backwards
     drivebase.straight(distance=-150, then=Stop.HOLD, wait=True)
     # Turn
-    drivebase.turn(angle=67, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=86, then=Stop.HOLD, wait=True)
     # Drive forward
     drivebase.straight(distance=140, then=Stop.HOLD, wait=True)
     # Turn
-    drivebase.turn(angle=80, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=53, then=Stop.HOLD, wait=True)
     # Drive forward
-    drivebase.straight(distance=365, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=330, then=Stop.HOLD, wait=True)
     # Turn to face mission 3
-    drivebase.turn(angle=-107, then=Stop.HOLD, wait=True)
-    # Do the mission 3
+    drivebase.turn(angle=-106, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=320, then=Stop.HOLD, wait=True)
-
+    
 
 # Return back to base
 # -------------------
@@ -74,12 +66,9 @@ def solve_mission_3():
 
 def return_to_base():
     # Return to home
-    drivebase.drive(speed=-900, turn_rate=20)
+    drivebase.drive(speed=-900, turn_rate=24)
     # Wait
     wait(5000)
 
-
-# MAIN PROGRAM
-# ============
 solve_mission_3()
 return_to_base()
