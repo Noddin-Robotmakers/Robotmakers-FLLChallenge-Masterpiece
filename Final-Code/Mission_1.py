@@ -1,4 +1,3 @@
-```
 # IMPORTS
 # =======
 from pybricks.hubs import InventorHub
@@ -61,4 +60,3 @@ def solve_and_return_to_base():
 # MAIN PROGRAM
 # ============
 solve_and_return_to_base()
-```
