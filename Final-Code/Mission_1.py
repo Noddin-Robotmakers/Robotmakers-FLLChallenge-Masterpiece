@@ -9,9 +9,9 @@ from pybricks.robotics import DriveBase
 # CONSTANTS
 # =========
 STRAIGHT_SPEED = 900
-STRAIGHT_ACC = 300
-TURN_RATE = 300
-TURN_ACC = 990
+STRAIGHT_ACC = 900
+TURN_RATE = 900
+TURN_ACC = 300
 
 
 # VARIABLE (HUB)
@@ -48,13 +48,15 @@ def solve_and_return_to_base():
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
     # Drive forward
-    drivebase.straight(distance=240, then=Stop.HOLD, wait=True)
-    # Turn
-    drivebase.turn(angle=80, then=Stop.HOLD, wait=True)
-    # Turn back
-    drivebase.turn(angle=-80, then=Stop.HOLD, wait=True)
-    # Return to base
-    drivebase.straight(distance=-300, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=400, then=Stop.HOLD, wait=True)
+     # Drive forward
+    drivebase.straight(distance=-40, then=Stop.HOLD, wait=True)
+     # Drive forward
+    drivebase.straight(distance=60, then=Stop.HOLD, wait=True)
+    drivebase.turn(-15) 
+
+    # Drive forward
+    drivebase.straight(distance=-400, then=Stop.HOLD, wait=True)
 
 
 # MAIN PROGRAM
