@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
 
-python3 -m pip install PIP SetUpTools --upgrade
+python3 -m pip install PIP SetUpTools --upgrade --break-system-packages
 
-python3 -m pip install -r requirements.txt --upgrade --user
+python3 -m pip install -r requirements.txt --upgrade --user --break-system-packages

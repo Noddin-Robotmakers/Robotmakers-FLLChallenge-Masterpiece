@@ -1,2 +1,1 @@
-# Pybricks >= 3.3.0a5
-Pybricks @ https://GitHub.com/Pybricks/Pybricks-API/archive/master.zip
+Pybricks >= 3.4.1
