@@ -6,45 +6,44 @@ from pybricks.parameters import Direction, Port, Stop
 from pybricks.robotics import DriveBase
 
 
-# CONSTANTS
-# =========
+# CONSTANTS for Robot Operation Parameters
+# ========================================
 STRAIGHT_SPEED = 900
 STRAIGHT_ACC = 300
 TURN_RATE = 70
 TURN_ACC = 70
 
 
-# VARIABLE (HUB)
-# ==============
+# VARIABLES Representing Robot Electronics
+# ========================================
+
+# Hub
 hub = InventorHub()
 
-# VARIABLES (DRIVING MOTORS + DRIVEBASE)
-# ======================================
+# Driving Motors & Drivebase
 left_motor = Motor(port=Port.D, positive_direction=Direction.COUNTERCLOCKWISE)
 right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
-# VARIABLES (ATTACHMENT MOTORS)
-# =============================
+# Attachment Motors
 left_attachent_motor = Motor(port=Port.B)
 right_attachent_motor = Motor(port=Port.A)
 
-# VARIABLES (SENSORS)
-# ===================
+# Sensors
 right_color_sensor = ColorSensor(Port.E)
 left_color_sensor = ColorSensor(Port.F)
 
 
-# FUNCTIONS
-# =========
+# FUNCTIONS Representing Robot Behaviors
+# ======================================
 
-# Solve mission 3
-# ---------------
-def solve_mission_3():
+# Solve Mission #3
+def solve_m3():
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
+
     # Drive from the home area to mission 2
     drivebase.straight(distance=575, then=Stop.HOLD, wait=True)
     # Turn
@@ -60,10 +59,8 @@ def solve_mission_3():
     # Do the mission
     drivebase.straight(distance=200, then=Stop.HOLD, wait=True)
 
+
 # Return back to base
-# -------------------
-
-
 def return_to_base():
     # Drive backward
     drivebase.straight(distance=-600, then=Stop.HOLD, wait=True)
@@ -75,5 +72,5 @@ def return_to_base():
 
 # MAIN PROGRAM
 # ============
-solve_mission_3()
+solve_m3()
 return_to_base()
