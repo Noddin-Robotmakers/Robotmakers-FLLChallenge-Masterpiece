@@ -1,3 +1,4 @@
+```
 # IMPORTS
 # =======
 from pybricks.hubs import InventorHub
@@ -10,8 +11,8 @@ from pybricks.robotics import DriveBase
 # =========
 STRAIGHT_SPEED = 900
 STRAIGHT_ACC = 300
-TURN_RATE = 80
-TURN_ACC = 85
+TURN_RATE = 300
+TURN_ACC = 990
 
 
 # VARIABLE (HUB)
@@ -38,31 +39,26 @@ left_color_sensor = ColorSensor(Port.F)
 # FUNCTIONS
 # =========
 
-# solve mission 13
-# ----------------
-def solve_mission_13_and_return_to_base():
+
+# Solve mission 1
+# ---------------
+def solve_and_return_to_base():
     # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
-    drivebase.straight(200)
-    drivebase.turn(-90)
-    drivebase.straight(700)
-    drivebase.turn(95)
-    drivebase.straight(155)
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=1650,
-                                    then=Stop.COAST, wait=True)
-    drivebase.straight(-155)
-    drivebase.turn(-90)
-    drivebase.straight(300)
-    drivebase.turn(-90)
-    drivebase.straight(200)
-    drivebase.turn(-90)
-    drivebase.straight(200)
-    drivebase.turn(-90)
+    # Drive forward
+    drivebase.straight(distance=240, then=Stop.HOLD, wait=True)
+    # Turn
+    drivebase.turn(angle=80, then=Stop.HOLD, wait=True)
+    # Turn back
+    drivebase.turn(angle=-80, then=Stop.HOLD, wait=True)
+    # Return to base
+    drivebase.straight(distance=-300, then=Stop.HOLD, wait=True)
 
 
 # MAIN PROGRAM
 # ============
-solve_mission_13_and_return_to_base()
+solve_and_return_to_base()
+```
