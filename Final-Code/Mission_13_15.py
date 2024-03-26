@@ -47,47 +47,40 @@ def solve_mission_13_and_return_to_base():
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
     # Drive forward
-    drivebase.straight(distance=240, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=280, then=Stop.HOLD, wait=True)
+    
     # Turn to face the mission
-    drivebase.turn(angle=-47, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=-54, then=Stop.HOLD, wait=True)
+    
     # Drive into the mission
-    drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
-    # Hook on to the craft creator lid
+    drivebase.straight(distance=115, then=Stop.HOLD, wait=True)
+    # Grab the expert
     right_attachent_motor.run_angle(speed=1000, rotation_angle=-150,
-                                    then=Stop.COAST, wait=True)
+                                   then=Stop.COAST, wait=True)
     # Turn to face the mission
-    drivebase.turn(angle=5, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=8, then=Stop.HOLD, wait=True)
     # Drive into the mission
-    drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=170, then=Stop.HOLD, wait=True)
     
     # Drive back
-    drivebase.straight(distance=8, then=Stop.HOLD, wait=False)
+    drivebase.straight(distance=14, then=Stop.HOLD, wait=False)
 
-    # Hook on to the craft creator lid
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=150,
+    # Open the flap
+    right_attachent_motor.run_angle(speed=1000, rotation_angle=1000,
                                     then=Stop.COAST, wait=False)
 
     # Hook on the lever for mission 12
     left_attachent_motor.run_angle(speed=1000, rotation_angle=720,
                                    then=Stop.COAST, wait=True)
-    # Drive backwards
-    drivebase.straight(distance=-360, then=Stop.HOLD, wait=True)
-    # Turn
-    drivebase.turn(angle=-55, then=Stop.HOLD, wait=True)
-    # Go forward
-    drivebase.straight(distance=300, then=Stop.HOLD, wait=True)
-    # Hook on the lever for mission 8
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=170,
-                                   then=Stop.HOLD, wait=True)
-    # Turn
-    drivebase.turn(angle=10, then=Stop.HOLD, wait=True)
-    # Go forward
-    drivebase.straight(distance=380, then=Stop.HOLD, wait=True)
-    # Drive back to home
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=-160,
-                                   then=Stop.COAST, wait=True)
-    drivebase.straight(distance=-1050, then=Stop.HOLD, wait=True)
 
+    drivebase.settings(straight_speed=900,
+                       straight_acceleration=900,
+                       turn_rate=TURN_RATE,
+                       turn_acceleration=TURN_ACC)                              
+
+    # Drive backwards
+    drivebase.straight(distance=-600, then=Stop.HOLD, wait=True)
+    
 
 # MAIN PROGRAM
 # ============
