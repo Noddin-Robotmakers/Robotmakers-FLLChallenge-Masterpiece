@@ -41,22 +41,22 @@ def solve_mission_3():
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)                
     # Drive from the home area to mission 2
-    drivebase.straight(distance=620, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=610, then=Stop.HOLD, wait=True)
     drivebase.turn(-3)
     # Drive forward
     drivebase.straight(distance=215, then=Stop.HOLD, wait=True)
-    # Drive backwards
+    # Drive backward
     drivebase.straight(distance=-150, then=Stop.HOLD, wait=True)
     # Turn
-    drivebase.turn(angle=86, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=66, then=Stop.HOLD, wait=True)
     # Drive forward
     drivebase.straight(distance=140, then=Stop.HOLD, wait=True)
     # Turn
-    drivebase.turn(angle=53, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=78, then=Stop.HOLD, wait=True)
     # Drive forward
-    drivebase.straight(distance=330, then=Stop.HOLD, wait=True)
+    drivebase.straight(distance=345, then=Stop.HOLD, wait=True)
     # Turn to face mission 3
-    drivebase.turn(angle=-106, then=Stop.HOLD, wait=True)
+    drivebase.turn(angle=-102, then=Stop.HOLD, wait=True)
     drivebase.straight(distance=320, then=Stop.HOLD, wait=True)
     
 
@@ -66,7 +66,7 @@ def solve_mission_3():
 
 def return_to_base():
     # Return to home
-    drivebase.drive(speed=-900, turn_rate=24)
+    drivebase.drive(speed=-900, turn_rate=27)
     # Wait
     wait(5000)
 
