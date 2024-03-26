@@ -47,7 +47,9 @@ def solve_mission_6():
                        turn_rate=TURN_RATE,
                        turn_acceleration=TURN_ACC)
     # Drive forward
-    drivebase.straight(690)
+    drivebase.straight(850)
+    # Drive back
+    drivebase.straight(-140)
     # Turn to face mission
     drivebase.turn(40)
     # Drive into mission
