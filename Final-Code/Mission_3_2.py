@@ -63,7 +63,7 @@ def solve_missions_3_2():
     drivebase.straight(distance=320, then=Stop.HOLD, wait=True)
 
 
-# Return back to base
+# Return back to base and collect Noah
 def return_to_base():
     # Return to home
     drivebase.drive(speed=-900, turn_rate=27)
