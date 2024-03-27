@@ -38,7 +38,7 @@ left_color_sensor = ColorSensor(Port.F)
 # FUNCTIONS Representing Robot Behaviors
 # ======================================
 
-# Solve Missions #9,10,4,5
+# Solve Missions #9, #10, #4 & #5
 def solve_mission_9_10_4_5():
     drivebase.settings(straight_speed=900,
                        straight_acceleration=300,
@@ -49,6 +49,7 @@ def solve_mission_9_10_4_5():
     drivebase.straight(distance=-60, then=Stop.HOLD, wait=True)
     # Turn to face M10
     drivebase.turn(angle=44, then=Stop.HOLD, wait=True)
+
     drivebase.settings(straight_speed=300,
                        straight_acceleration=300,
                        turn_rate=100,
@@ -58,6 +59,7 @@ def solve_mission_9_10_4_5():
     drivebase.straight(distance=-430, then=Stop.HOLD, wait=True)
     # Back up
     drivebase.straight(distance=150, then=Stop.HOLD, wait=True)
+
     drivebase.settings(straight_speed=900,
                        straight_acceleration=300,
                        turn_rate=100,
@@ -83,6 +85,7 @@ def solve_mission_9_10_4_5():
     drivebase.straight(distance=187, then=Stop.HOLD, wait=True)
     # Half finish M5
     drivebase.turn(angle=46, then=Stop.HOLD, wait=True)
+
     # Change drivebase setting for M5
     drivebase.settings(straight_speed=900,
                        straight_acceleration=900,

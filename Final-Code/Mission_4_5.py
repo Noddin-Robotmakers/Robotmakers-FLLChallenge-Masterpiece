@@ -70,6 +70,7 @@ def solve_missions_4_5_and_go_to_other_base():
     drivebase.straight(distance=900, then=Stop.HOLD, wait=True)
     # Turn
     drivebase.turn(angle=90, then=Stop.HOLD, wait=True)
+
     # Go to the other side
     drivebase.straight(distance=1220, then=Stop.HOLD, wait=True)
 

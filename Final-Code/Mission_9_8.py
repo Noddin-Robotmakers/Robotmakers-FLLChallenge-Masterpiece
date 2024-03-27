@@ -45,6 +45,7 @@ def solve_missions_9_8():
     drivebase.straight(distance=40, then=Stop.HOLD, wait=True)
     # Go backward
     drivebase.straight(distance=-40, then=Stop.HOLD, wait=True)
+
     # Change drivebase speed
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,

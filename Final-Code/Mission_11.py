@@ -62,7 +62,6 @@ def solve_mission_11_and_return_to_base():
 
 # Return to other home Base
 def return_to_base():
-
     # Go forward
     drivebase.straight(-155)
     # Turn
