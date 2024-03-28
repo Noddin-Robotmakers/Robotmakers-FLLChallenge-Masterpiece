@@ -37,8 +37,8 @@ left_color_sensor = ColorSensor(Port.F)
 # FUNCTIONS Representing Robot Behaviors
 # ======================================
 
-# solve mission 11 and return to other Base
-def solve_mission_11_and_return_to_base():
+# solve Mission #11
+def solve_m11():
     # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
@@ -82,5 +82,5 @@ def return_to_base():
 
 # MAIN PROGRAM
 # ============
-solve_mission_11_and_return_to_base()
+solve_m11()
 return_to_base()
