@@ -61,7 +61,7 @@ def solve_m11():
 
 
 # Return to other home Base
-def return_to_base():
+def return_to_other_base():
     # Go forward
     drivebase.straight(-155)
     # Turn
@@ -83,4 +83,4 @@ def return_to_base():
 # MAIN PROGRAM
 # ============
 solve_m11()
-return_to_base()
+return_to_other_base()
