@@ -33,8 +33,8 @@ right_attachment_motor = Motor(port=Port.A)
 # FUNCTIONS Representing Robot Behaviors
 # ======================================
 
-# solve mission 13 and return home
-def solve_mission_13_and_return_to_base():
+# solve Mission #13, #12 and return home
+def solve_missions_13_12_and_return_to_base():
     # Settings for drivebase
     drivebase.settings(straight_speed=STRAIGHT_SPEED,
                        straight_acceleration=STRAIGHT_ACC,
@@ -80,4 +80,4 @@ def solve_mission_13_and_return_to_base():
 
 # MAIN PROGRAM
 # ============
-solve_mission_13_and_return_to_base()
+solve_missions_13_12_and_return_to_base()
