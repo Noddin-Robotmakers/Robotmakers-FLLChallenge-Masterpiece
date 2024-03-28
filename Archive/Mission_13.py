@@ -26,8 +26,8 @@ drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # VARIABLES (ATTACHMENT MOTORS)
 # =============================
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 # VARIABLES (SENSORS)
 # ===================
@@ -53,11 +53,11 @@ def solve_mission_13_and_return_to_base():
     # Drive into the mission
     drivebase.straight(distance=400, then=Stop.HOLD, wait=True)
     # Hook on to the craft creator lid
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=180,
-                                    then=Stop.COAST, wait=False)
+    right_attachment_motor.run_angle(speed=1000, rotation_angle=180,
+                                     then=Stop.COAST, wait=False)
     # Hook on the lever for mission 12
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=100,
-                                   then=Stop.COAST, wait=True)
+    left_attachment_motor.run_angle(speed=1000, rotation_angle=100,
+                                    then=Stop.COAST, wait=True)
     # Drive back to home
     drivebase.straight(distance=-700, then=Stop.HOLD, wait=True)
 

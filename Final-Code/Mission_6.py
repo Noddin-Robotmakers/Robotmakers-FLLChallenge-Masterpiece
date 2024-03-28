@@ -26,8 +26,8 @@ right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # Attachment Motors
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 # Sensors
 right_color_sensor = ColorSensor(Port.E)
@@ -54,8 +54,8 @@ def solve_m6():
     # Drive into mission
     drivebase.straight(230)
     # Do the speakers
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=-270,
-                                   then=Stop.COAST, wait=True)
+    left_attachment_motor.run_angle(speed=1000, rotation_angle=-270,
+                                    then=Stop.COAST, wait=True)
     # Drive back
     drivebase.straight(-100)
 

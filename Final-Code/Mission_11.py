@@ -26,8 +26,8 @@ right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # Attachment Motors
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 # Sensors
 right_color_sensor = ColorSensor(Port.E)
@@ -56,8 +56,8 @@ def solve_mission_11_and_return_to_base():
     # Go forward
     drivebase.straight(155)
     # Do M11
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=1650,
-                                    then=Stop.COAST, wait=True)
+    right_attachment_motor.run_angle(speed=1000, rotation_angle=1650,
+                                     then=Stop.COAST, wait=True)
 
 
 # Return to other home Base

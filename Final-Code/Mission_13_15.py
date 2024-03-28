@@ -26,8 +26,8 @@ right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # Attachment Motors
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 
 # FUNCTIONS Representing Robot Behaviors
@@ -50,8 +50,8 @@ def solve_mission_13_and_return_to_base():
     # Drive into the mission
     drivebase.straight(distance=115, then=Stop.HOLD, wait=True)
     # Grab the expert
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=-150,
-                                    then=Stop.COAST, wait=True)
+    right_attachment_motor.run_angle(speed=1000, rotation_angle=-150,
+                                     then=Stop.COAST, wait=True)
     # Turn to face the mission
     drivebase.turn(angle=8, then=Stop.HOLD, wait=True)
     # Drive into the mission
@@ -61,12 +61,12 @@ def solve_mission_13_and_return_to_base():
     drivebase.straight(distance=14, then=Stop.HOLD, wait=False)
 
     # Turn the chicken
-    right_attachent_motor.run_angle(speed=1000, rotation_angle=1000,
-                                    then=Stop.COAST, wait=False)
+    right_attachment_motor.run_angle(speed=1000, rotation_angle=1000,
+                                     then=Stop.COAST, wait=False)
 
     # Hook on the lever for mission 12
-    left_attachent_motor.run_angle(speed=1000, rotation_angle=720,
-                                   then=Stop.COAST, wait=True)
+    left_attachment_motor.run_angle(speed=1000, rotation_angle=720,
+                                    then=Stop.COAST, wait=True)
 
     # Change drivebase speed to go back to Home
     drivebase.settings(straight_speed=900,

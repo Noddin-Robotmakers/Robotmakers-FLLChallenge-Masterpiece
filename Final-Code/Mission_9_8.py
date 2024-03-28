@@ -26,8 +26,8 @@ right_motor = Motor(port=Port.C)
 drivebase = DriveBase(left_motor, right_motor, 56, 110)
 
 # Attachment Motors
-left_attachent_motor = Motor(port=Port.B)
-right_attachent_motor = Motor(port=Port.A)
+left_attachment_motor = Motor(port=Port.B)
+right_attachment_motor = Motor(port=Port.A)
 
 
 # FUNCTIONS Representing Robot Behaviors
