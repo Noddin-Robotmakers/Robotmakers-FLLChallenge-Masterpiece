@@ -66,7 +66,7 @@ def solve_missions_3_2():
 # Return back to base and collect Noah
 def return_to_base():
     # Return to home
-    drivebase.drive(speed=-900, turn_rate=27)
+    drivebase.drive(speed=-900, turn_rate=24)
     # Wait
     wait(5000)
 
